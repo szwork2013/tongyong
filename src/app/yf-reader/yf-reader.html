@@ -1,0 +1,12 @@
+<div class="yf-reader-view">
+  <div class="yf-reader-head">
+    <p class="yf-reader-title" ng-bind="pageData.detail.title"></p>
+
+    <p class="yf-reader-info"><span class="iconfont icon-eye yf-reader-ico"></span> <span ng-bind="pageData.detail.pv"></span>
+
+    <span class="yf-reader-time">发布于<span ng-bind="pageData.detail.time | date:'yyyy年MM月dd日'"></span></span></p>
+  </div>
+  <div class="yf-reader-content">
+    <p class="yf-reader-text" ng-bind-html="pageData.detail.articlecontent"></p>
+  </div>
+</div>

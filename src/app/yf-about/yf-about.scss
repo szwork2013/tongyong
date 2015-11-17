@@ -1,0 +1,52 @@
+.yf-about-view {
+  background-color: #efeff4;
+  min-height: 100% !important;
+  height: auto !important;
+}
+
+.yf-about-head {
+  background-color: #fff;
+}
+
+.yf-about-tabs {
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+  height: 4rem;
+  line-height: 4rem;
+  color: #666;
+}
+
+.yf-about-tabs-active {
+  border-bottom: 2px solid #11597d;
+  color: #4d839e;
+}
+
+.yf-about-container {
+  margin: 1rem 1rem 0 1rem;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.yf-about-pic {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.yf-about-text {
+  display: inline-block;
+  width: 75%;
+  vertical-align: top;
+  padding-left: 1rem;
+}
+
+.yf-about-title {
+  color: #406f87;
+}
+
+.yf-about-content {
+  font-size: 1.3rem;
+}

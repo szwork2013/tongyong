@@ -1,0 +1,51 @@
+.dz-product-view {
+  background-color: #f7f7f7;
+  min-height: 100% !important;
+  height: auto !important;
+}
+
+.dz-product-head {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ccc;
+}
+
+.dz-product-tabs {
+  display: inline-block;
+  width: 24.03%;
+  text-align: center;
+  height: 4rem;
+  line-height: 4rem;
+  color: #666;
+}
+
+.dz-product-tabs-active {
+  border-bottom: 2px solid #11597d;
+  color: #4d839e;
+}
+
+.dz-product-container {
+  padding: 1rem 0.5rem 0 0.5rem;
+}
+
+.dz-product-content {
+  display: inline-block;
+  width: 49.3%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.dz-product-pic {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.dz-product-title {
+  width: 100%;
+  border-radius: 0 0 6px 6px;
+  background-color: rgba(127, 127, 127, 0.5);
+  padding: 1rem;
+  margin: 0 !important;
+  position: absolute;
+  bottom: 0;
+}
