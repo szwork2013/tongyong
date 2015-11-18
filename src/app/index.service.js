@@ -3,6 +3,7 @@ angular
     var commService = {
       baseData: {
         listUrl:"http://dev2.comeoncloud.net/serv/api/article/list.ashx",
+        listMenuUrl:"http://dev2.comeoncloud.net/serv/api/mall/navigation.ashx",
         detailUrl:"http://dev2.comeoncloud.net/serv/api/article/get.ashx"
       }
     };

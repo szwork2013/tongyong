@@ -8,7 +8,7 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
-      //英孚
+    //英孚
       .state('yf-index', {
         url: '/yf-index',
         templateUrl: 'app/yf-index/yf-index.html',
@@ -28,11 +28,17 @@
         controllerAs: 'list'
       })
       .state('yf-course', {
-      url: '/yf-course',
-      templateUrl: 'app/yf-course/yf-course.html',
-      controller: 'listCtrl',
-      controllerAs: 'list'
-    })
+        url: '/yf-course',
+        templateUrl: 'app/yf-course/yf-course.html',
+        controller: 'listCtrl',
+        controllerAs: 'list'
+      })
+      .state('yf-study', {
+        url: '/yf-study',
+        templateUrl: 'app/yf-study/yf-study.html',
+        controller: 'listCtrl',
+        controllerAs: 'list'
+      })
       .state('yf-reader', {
         url: '/yf-reader/:id',
         templateUrl: 'app/yf-reader/yf-reader.html',

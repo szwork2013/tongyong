@@ -1,22 +1,11 @@
-<div class="yf-about-view" data-ng-init="pageFunc.loadPage('597')">
+<div class="yf-about-view" data-ng-init="pageFunc.loadPage('597','top')">
   <div class="yf-about-head">
     <span class="yf-about-tabs" ng-class="{'yf-about-tabs-active':pageData.a==true}"
-          ng-click="pageFunc.tabs('1');pageFunc.loadPage('597')">英孚介绍</span>
+          ng-click="pageFunc.loadPage('597','top');pageFunc.tabs('1')" ng-bind="pageData.menu[0].navigation_name"></span>
     <span class="yf-about-tabs" ng-class="{'yf-about-tabs-active':pageData.b==true}"
-          ng-click="pageFunc.tabs('2');pageFunc.loadPage('598')">校区分布</span>
+          ng-click="pageFunc.loadPage('598','top');pageFunc.tabs('2')" ng-bind="pageData.menu[1].navigation_name"></span>
   </div>
-  <div class="yf-about-container" ng-show="pageData.a" ng-repeat="a in pageData.info.list"
-       ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].article_id})">
-    <div class="yf-about-pic">
-      <img ng-src="{{pageData.info.list[$index].article_img_url}}" class="full-width">
-    </div>
-    <div class="yf-about-text">
-      <p class="yf-about-title" ng-bind="pageData.info.list[$index].article_name"></p>
-
-      <p class="yf-about-content" ng-bind="pageData.info.list[$index].article_summary"></p>
-    </div>
-  </div>
-  <div class="yf-about-container" ng-show="pageData.b" ng-repeat="b in pageData.info.list"
+  <div class="yf-about-container" ng-repeat="List in pageData.info.list"
        ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].article_id})">
     <div class="yf-about-pic">
       <img ng-src="{{pageData.info.list[$index].article_img_url}}" class="full-width">

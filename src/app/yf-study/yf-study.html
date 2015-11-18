@@ -1,0 +1,13 @@
+<div class="yf-study-view" data-ng-init="pageFunc.loadPage('609','top')">
+  <div class="yf-study-container" ng-repeat="List in pageData.info.list"
+       ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].article_id})">
+    <div class="yf-study-pic">
+      <img ng-src="{{pageData.info.list[$index].article_img_url}}" class="full-width">
+    </div>
+    <div class="yf-study-text">
+      <p class="yf-study-title" ng-bind="pageData.info.list[$index].article_name"></p>
+
+      <p class="yf-study-content" ng-bind="pageData.info.list[$index].article_summary"></p>
+    </div>
+  </div>
+</div>

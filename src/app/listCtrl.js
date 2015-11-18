@@ -9,25 +9,38 @@ function listCtrl($state, $scope, commService) {
     c: false,
     d: false,
     info: {},
-    dz_img: ['../assets/images/dizhou/banner.jpg', '../assets/images/dizhou/banner2.jpg', '../assets/images/dizhou/banner3.jpg']
+    menu: {},
+    dz_img: ['http://dev2.comeoncloud.net/customize/ef/assets/images/dizhou/banner.jpg', 'http://dev2.comeoncloud.net/customize/ef/assets/images/dizhou/banner2.jpg', 'http://dev2.comeoncloud.net/customize/ef/assets/images/dizhou/banner3.jpg']
   };
   var pageFunc = $scope.pageFunc = {};
 
-  pageFunc.loadPage = function (e) {
+  pageFunc.loadPage = function (catid, menu) {
     commService.get(
       commService.baseData.listUrl,
       {
-        category_id: e
+        category_id: catid
       }, function (data) {
-        if(data.isSuccess==true){
-        pageData.info = data.returnObj;
+        if (data.isSuccess == true) {
+          pageData.info = data.returnObj;
         }
       }
-    )
+    );
+    commService.get(
+      commService.baseData.listMenuUrl,
+      {
+        action: menu
+      }, function (data) {
+        pageData.menu = data[0].children;
+      }
+    );
   };
 
-  pageFunc.go = function (route,id) { //利用路由进行跳转
-    $state.go(route,id);
+  pageFunc.go = function (route, id) { //利用路由进行跳转
+    $state.go(route, id);
+  };
+
+  pageFunc.goTo = function (url) {
+    window.location.href = url;
   };
 
   pageFunc.tabs = function (e) { //tab切换逻辑

@@ -1,34 +1,13 @@
-<div class="yf-course-view" data-ng-init="pageFunc.loadPage('599')">
+<div class="yf-course-view" data-ng-init="pageFunc.loadPage('599','bottom')">
   <div class="yf-course-head">
     <span class="yf-course-tabs" ng-class="{'yf-course-tabs-active':pageData.a==true}"
-          ng-click="pageFunc.tabs('1');pageFunc.loadPage('599')">课程介绍</span>
+          ng-click="pageFunc.tabs('1');pageFunc.loadPage('599','bottom')" ng-bind="pageData.menu[0].navigation_name"></span>
     <span class="yf-course-tabs" ng-class="{'yf-course-tabs-active':pageData.b==true}"
-          ng-click="pageFunc.tabs('2');pageFunc.loadPage('600')">外教师资</span>
+          ng-click="pageFunc.tabs('2');pageFunc.loadPage('600','bottom')" ng-bind="pageData.menu[1].navigation_name"></span>
     <span class="yf-course-tabs" ng-class="{'yf-course-tabs-active':pageData.c==true}"
-          ng-click="pageFunc.tabs('3');pageFunc.loadPage('601')">最新资讯</span>
+          ng-click="pageFunc.tabs('3');pageFunc.loadPage('601','bottom')" ng-bind="pageData.menu[2].navigation_name"></span>
   </div>
-  <div class="yf-course-container" ng-show="pageData.a" ng-repeat="a in pageData.info.list"
-       ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].article_id})">
-    <div class="yf-course-text">
-      <p class="yf-course-title" ng-bind="pageData.info.list[$index].article_name"></p>
-
-      <p class="yf-course-content" ng-bind="pageData.info.list[$index].article_summary"></p>
-
-      <p class="yf-course-time">发布于<span ng-bind="pageData.info.list[$index].article_time | date:'yyyy年MM月dd日'"></span></p>
-    </div>
-  </div>
-
-  <div class="yf-course-container" ng-show="pageData.b" ng-repeat="b in pageData.info.list"
-       ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].article_id})">
-    <div class="yf-course-text">
-      <p class="yf-course-title" ng-bind="pageData.info.list[$index].article_name"></p>
-
-      <p class="yf-course-content" ng-bind="pageData.info.list[$index].article_summary"></p>
-
-      <p class="yf-course-time">发布于<span ng-bind="pageData.info.list[$index].article_time | date:'yyyy年MM月dd日'"></span></p>
-    </div>
-  </div>
-  <div class="yf-course-container" ng-show="pageData.c" ng-repeat="c in pageData.info.list"
+  <div class="yf-course-container" ng-repeat="List in pageData.info.list"
        ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].article_id})">
     <div class="yf-course-text">
       <p class="yf-course-title" ng-bind="pageData.info.list[$index].article_name"></p>
