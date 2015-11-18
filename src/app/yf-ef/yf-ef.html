@@ -1,44 +1,44 @@
-<div class="yf-ef-view" data-ng-init="pageFunc.loadPage('0')">
+<div class="yf-ef-view" data-ng-init="pageFunc.loadPage('602')">
   <div class="yf-ef-head">
     <span class="yf-ef-tabs" ng-class="{'yf-ef-tabs-active':pageData.a==true}"
-          ng-click="pageFunc.tabs('1');pageFunc.loadPage('0')">最佳员工</span>
+          ng-click="pageFunc.tabs('1');pageFunc.loadPage('602')">最佳员工</span>
     <span class="yf-ef-tabs" ng-class="{'yf-ef-tabs-active':pageData.b==true}"
-          ng-click="pageFunc.tabs('2');pageFunc.loadPage('382')">金牌师资</span>
+          ng-click="pageFunc.tabs('2');pageFunc.loadPage('603')">金牌师资</span>
     <span class="yf-ef-tabs" ng-class="{'yf-ef-tabs-active':pageData.c==true}"
-          ng-click="pageFunc.tabs('3');pageFunc.loadPage('0')">优秀学员</span>
+          ng-click="pageFunc.tabs('3');pageFunc.loadPage('604')">优秀学员</span>
   </div>
   <div class="yf-ef-container" ng-show="pageData.a" ng-repeat="a in pageData.info.list"
-       ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].articleid})">
+       ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].article_id})">
     <div class="yf-ef-pic">
-      <img ng-src="{{pageData.info.list[$index].imgurl}}" class="full-width">
+      <img ng-src="{{pageData.info.list[$index].article_img_url}}" class="full-width">
     </div>
     <div class="yf-ef-text">
-      <p class="yf-ef-title" ng-bind="pageData.info.list[$index].title"></p>
+      <p class="yf-ef-title" ng-bind="pageData.info.list[$index].article_name"></p>
 
-      <p class="yf-ef-content" ng-bind="pageData.info.list[$index].digest"></p>
+      <p class="yf-ef-content" ng-bind="pageData.info.list[$index].article_summary"></p>
     </div>
   </div>
 
   <div class="yf-ef-container" ng-show="pageData.b" ng-repeat="b in pageData.info.list"
-       ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].articleid})">
+       ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].article_id})">
     <div class="yf-ef-pic">
-      <img ng-src="{{pageData.info.list[$index].imgurl}}" class="full-width">
+      <img ng-src="{{pageData.info.list[$index].article_img_url}}" class="full-width">
     </div>
     <div class="yf-ef-text">
-      <p class="yf-ef-title" ng-bind="pageData.info.list[$index].title"></p>
+      <p class="yf-ef-title" ng-bind="pageData.info.list[$index].article_name"></p>
 
-      <p class="yf-ef-content" ng-bind="pageData.info.list[$index].digest"></p>
+      <p class="yf-ef-content" ng-bind="pageData.info.list[$index].article_summary"></p>
     </div>
   </div>
   <div class="yf-ef-container" ng-show="pageData.c" ng-repeat="c in pageData.info.list"
-       ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].articleid})">
+       ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].article_id})">
     <div class="yf-ef-pic">
-      <img ng-src="{{pageData.info.list[$index].imgurl}}" class="full-width">
+      <img ng-src="{{pageData.info.list[$index].article_img_url}}" class="full-width">
     </div>
     <div class="yf-ef-text">
-      <p class="yf-ef-title" ng-bind="pageData.info.list[$index].title"></p>
+      <p class="yf-ef-title" ng-bind="pageData.info.list[$index].article_name"></p>
 
-      <p class="yf-ef-content" ng-bind="pageData.info.list[$index].digest">/p>
+      <p class="yf-ef-content" ng-bind="pageData.info.list[$index].article_summary">/p>
     </div>
   </div>
 </div>

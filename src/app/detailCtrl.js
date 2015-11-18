@@ -4,16 +4,16 @@ angular
 
 function detailCtrl($state,$stateParams, $scope,commService) {
   var pageData = $scope.pageData = {
-    articleid:$stateParams.id
+    articleId:$stateParams.id,
+    detail:{}
   };
   var pageFunc = $scope.pageFunc = {};
 
   pageFunc.getArticle = function () {
     commService.get(
-      commService.baseData.url,
+      commService.baseData.detailUrl,
       {
-        action: "getarticledetail",
-        articleid: pageData.articleid
+        article_id: pageData.articleId
       }, function (data) {
         pageData.detail = data;
       }

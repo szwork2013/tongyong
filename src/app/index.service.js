@@ -2,7 +2,8 @@ angular
   .module('zhiyun').factory("commService", ['$http', function ($http) {
     var commService = {
       baseData: {
-        url:"http://preview.comeoncloud.com.cn/serv/step5api.ashx"
+        listUrl:"http://dev2.comeoncloud.net/serv/api/article/list.ashx",
+        detailUrl:"http://dev2.comeoncloud.net/serv/api/article/get.ashx"
       }
     };
 

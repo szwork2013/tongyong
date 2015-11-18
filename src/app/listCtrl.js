@@ -9,22 +9,19 @@ function listCtrl($state, $scope, commService) {
     c: false,
     d: false,
     info: {},
-    detail: {},
     dz_img: ['../assets/images/dizhou/banner.jpg', '../assets/images/dizhou/banner2.jpg', '../assets/images/dizhou/banner3.jpg']
   };
   var pageFunc = $scope.pageFunc = {};
 
   pageFunc.loadPage = function (e) {
     commService.get(
-      commService.baseData.url,
+      commService.baseData.listUrl,
       {
-        action: "getarticlelist",
-        pageindex: 1,
-        pagesize: 10,
-        sort: "time",
-        cateid: e
+        category_id: e
       }, function (data) {
-        pageData.info = data;
+        if(data.isSuccess==true){
+        pageData.info = data.returnObj;
+        }
       }
     )
   };

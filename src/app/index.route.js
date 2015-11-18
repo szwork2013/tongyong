@@ -49,8 +49,8 @@
       .state('dz-enter', {
         url: '/dz-enter',
         templateUrl: 'app/dz-enter/dz-enter.html',
-        controller: 'listCtrl',
-        controllerAs: 'list'
+        controller: 'detailCtrl',
+        controllerAs: 'detail'
       })
       .state('dz-product', {
         url: '/dz-product',
