@@ -1,10 +1,19 @@
 angular
-  .module('zhiyun').factory("commService", ['$http', function ($http) {
+  .module('zhiyun').factory("commService", function ($rootScope,$http) {
+
+
+    if(location.hostname.match('localhost')||location.hostname.match('192.168.')){
+      $rootScope.mainsiteurl="http://efchengdu.gotocloud8.net";
+    }else{
+      $rootScope.mainsiteurl=location.origin;
+    }
+
+
     var commService = {
       baseData: {
-        listUrl:"http://dev2.comeoncloud.net/serv/api/article/list.ashx",
-        listMenuUrl:"http://dev2.comeoncloud.net/serv/api/mall/navigation.ashx",
-        detailUrl:"http://dev2.comeoncloud.net/serv/api/article/get.ashx"
+        listUrl:$rootScope.mainsiteurl+"/serv/api/article/list.ashx",
+        listMenuUrl:$rootScope.mainsiteurl+"/serv/api/mall/navigation.ashx",
+        detailUrl:$rootScope.mainsiteurl+"/serv/api/article/get.ashx"
       }
     };
 
@@ -94,4 +103,4 @@ angular
       });
     };
     return commService;
-  }]);
+  });
