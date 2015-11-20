@@ -1,11 +1,14 @@
 <div class="yf-index-view">
   <img src="assets/images/yingfu/index-bg.jpg" class="yf-index-bg">
-  <div class="yf-index-study" ng-click="pageFunc.go('yf-study')"></div>
+  <div class="yf-index-study" ui-sref="yf-list({type:'yf-english'})"></div>
   <div class="yf-index-bespeak"></div>
-  <a href="tel:4000281965"><div class="yf-index-xiaoe yf-index-test"></div></a>
+  <a href="tel:4000281965">
+    <div class="yf-index-xiaoe yf-index-test"></div>
+  </a>
+
   <div class="yf-index-active"
        ng-click="pageFunc.goTo('http://efchengdu.comeoncloud.net/App/Cation/Wap/ActivityLlists.aspx')">
-  </div>
-  <div class="yf-index-about" ng-click="pageFunc.go('yf-about')"></div>
-  <div class="yf-index-study-on" ng-click="pageFunc.go('yf-course')"></div>
+  </div>ui-sref="yf-about({type:'bottom'})"
+  <div class="yf-index-about" ui-sref="yf-list({type:'yf-about'})"></div>
+  <div class="yf-index-study-on" ui-sref="yf-list({type:'yf-study'})"></div>
 </div>

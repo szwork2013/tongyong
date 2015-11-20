@@ -15,27 +15,9 @@
         controller: 'listCtrl',
         controllerAs: 'list'
       })
-      .state('yf-about', {
-        url: '/yf-about',
-        templateUrl: 'app/yf-about/yf-about.html',
-        controller: 'listCtrl',
-        controllerAs: 'list'
-      })
-      .state('yf-ef', {
-        url: '/yf-ef',
-        templateUrl: 'app/yf-ef/yf-ef.html',
-        controller: 'listCtrl',
-        controllerAs: 'list'
-      })
-      .state('yf-course', {
-        url: '/yf-course',
-        templateUrl: 'app/yf-course/yf-course.html',
-        controller: 'listCtrl',
-        controllerAs: 'list'
-      })
-      .state('yf-study', {
-        url: '/yf-study',
-        templateUrl: 'app/yf-study/yf-study.html',
+      .state('yf-list', {
+        url: '/yf-list/:type/:id',
+        templateUrl: 'app/yf-list/yf-list.html',
         controller: 'listCtrl',
         controllerAs: 'list'
       })

@@ -1,0 +1,22 @@
+<div class="yf-list-view" data-ng-init="pageFunc.loadPage()">
+  <div class="yf-list-head">
+    <a class="yf-list-tabs" ng-repeat="x in pageData.menu" ng-bind="pageData.menu[$index].navigation_name"
+       ng-href="{{pageData.menu[$index].navigation_link}}"
+       ng-class="{'yf-list-tabs-active':pageData.cateid == pageData.menu[$index].isShow}"
+       ng-hide="pageData.type=='yf-english'"></a>
+  </div>
+  <div class="yf-list-container" ng-repeat="List in pageData.info.list"
+       ng-click="pageFunc.go('yf-reader',{id:pageData.info.list[$index].article_id})">
+    <div class="yf-list-pic" ng-hide="pageData.type=='yf-study'">
+      <img ng-src="{{pageData.info.list[$index].article_img_url}}" class="full-width">
+    </div>
+    <div class="yf-list-text" ng-class="{'yf-list-text-width':pageData.type=='yf-study'}">
+      <p class="yf-list-title" ng-bind="pageData.info.list[$index].article_name"></p>
+
+      <p class="yf-list-content" ng-bind="pageData.info.list[$index].article_summary"></p>
+
+      <p class="yf-list-time" ng-show="pageData.type=='yf-study'">发布于<span
+        ng-bind="pageData.info.list[$index].article_time | date:'yyyy年MM月dd日'"></span></p>
+    </div>
+  </div>
+</div>
