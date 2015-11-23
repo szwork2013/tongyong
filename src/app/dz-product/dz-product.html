@@ -1,56 +1,18 @@
-<div class="dz-product-view">
+<div class="dz-product-view" data-ng-init="pageFunc.loadPage()">
   <div class="dz-product-head">
-    <span class="dz-product-tabs" ng-class="{'dz-product-tabs-active':pageData.a==true}" ng-click="pageFunc.tabs('1')">蒸煲类</span>
-    <span class="dz-product-tabs" ng-class="{'dz-product-tabs-active':pageData.b==true}" ng-click="pageFunc.tabs('2')">烤煎类</span>
-    <span class="dz-product-tabs" ng-class="{'dz-product-tabs-active':pageData.c==true}" ng-click="pageFunc.tabs('3')">餐柜类</span>
-    <span class="dz-product-tabs" ng-class="{'dz-product-tabs-active':pageData.d==true}" ng-click="pageFunc.tabs('4')">除污类</span>
+    <!--<span class="dz-product-tabs" ng-class="{'dz-product-tabs-active':pageData.a==true}" ng-click="pageFunc.tabs('1')">蒸煲类</span>-->
+    <!--<span class="dz-product-tabs" ng-class="{'dz-product-tabs-active':pageData.b==true}" ng-click="pageFunc.tabs('2')">烤煎类</span>-->
+    <!--<span class="dz-product-tabs" ng-class="{'dz-product-tabs-active':pageData.c==true}" ng-click="pageFunc.tabs('3')">餐柜类</span>-->
+    <!--<span class="dz-product-tabs" ng-class="{'dz-product-tabs-active':pageData.d==true}" ng-click="pageFunc.tabs('4')">除污类</span>-->
+    <a class="dz-product-tabs" ng-repeat="x in pageData.menu" ng-bind="pageData.menu[$index].navigation_name"
+       ng-href="{{pageData.menu[$index].navigation_link}}"
+       ng-class="{'yf-list-tabs-active':pageData.cateid == pageData.menu[$index].isShow}"></a>
   </div>
-  <div class="dz-product-container" ng-show="pageData.a">
+  <div class="dz-product-container" ng-repeat="List in pageData.info.list"
+       ng-click="pageFunc.go('dz-detail',{id:pageData.info.list[$index].article_id})">
     <div class="dz-product-content" ng-click="pageFunc.go('dz-detail')">
-      <img src="assets/images/dizhou/1.jpg" class="dz-product-pic">
-      <p class="dz-product-title">蒸煲类</p>
-    </div>
-    <div class="dz-product-content">
-      <img src="assets/images/dizhou/1.jpg" class="dz-product-pic">
-      <p class="dz-product-title">蒸煲类</p>
-    </div>
-    <div class="dz-product-content">
-      <img src="assets/images/dizhou/1.jpg" class="dz-product-pic">
-      <p class="dz-product-title">蒸煲类</p>
-    </div>
-    <div class="dz-product-content">
-      <img src="assets/images/dizhou/1.jpg" class="dz-product-pic">
-      <p class="dz-product-title">蒸煲类</p>
-    </div>
-  </div>
-  <div class="dz-product-container" ng-show="pageData.b">
-    <div class="dz-product-content">
-      <img src="assets/images/dizhou/2.jpg" class="dz-product-pic">
-      <p class="dz-product-title">烤煎类</p>
-    </div>
-    <div class="dz-product-content">
-      <img src="assets/images/dizhou/2.jpg" class="dz-product-pic">
-      <p class="dz-product-title">烤煎类</p>
-    </div>
-  </div>
-  <div class="dz-product-container" ng-show="pageData.c">
-    <div class="dz-product-content">
-      <img src="assets/images/dizhou/3.jpg" class="dz-product-pic">
-      <p class="dz-product-title">餐柜类</p>
-    </div>
-    <div class="dz-product-content">
-      <img src="assets/images/dizhou/3.jpg" class="dz-product-pic">
-      <p class="dz-product-title">餐柜类</p>
-    </div>
-  </div>
-  <div class="dz-product-container" ng-show="pageData.d">
-    <div class="dz-product-content">
-      <img src="assets/images/dizhou/4.jpg" class="dz-product-pic">
-      <p class="dz-product-title">除污类</p>
-    </div>
-    <div class="dz-product-content">
-      <img src="assets/images/dizhou/4.jpg" class="dz-product-pic">
-      <p class="dz-product-title">除污类</p>
+      <img ng-src="{{pageData.info.list[$index].article_img_url}}" class="dz-product-pic">
+      <p class="dz-product-title" ng-bind="pageData.info.list[$index].article_name"></p>
     </div>
   </div>
 </div>

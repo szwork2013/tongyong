@@ -35,19 +35,19 @@
         controllerAs: 'list'
       })
       .state('dz-enter', {
-        url: '/dz-enter',
+        url: '/dz-enter/:id',
         templateUrl: 'app/dz-enter/dz-enter.html',
         controller: 'detailCtrl',
         controllerAs: 'detail'
       })
       .state('dz-product', {
-        url: '/dz-product',
+        url: '/dz-product/:type/:id',
         templateUrl: 'app/dz-product/dz-product.html',
         controller: 'listCtrl',
         controllerAs: 'list'
       })
       .state('dz-detail', {
-        url: '/dz-detail',
+        url: '/dz-detail/:id',
         templateUrl: 'app/dz-detail/dz-detail.html',
         controller: 'detailCtrl',
         controllerAs: 'detail'

@@ -28,6 +28,7 @@ function listCtrl($state,$stateParams, $scope, commService,$timeout) {
         pageData.width=(1/data.length)* 100+"%";  //根据返回的菜单数组动态计算宽度
         $timeout(function() {
           $(".yf-list-tabs").css("width", pageData.width);  //使用JQ应用宽度
+          $(".dz-product-tabs").css("width", pageData.width);
         });
         if($stateParams.id==""){  //如果进入页面后没有传递分类ID，将菜单数组第一个菜单的分类ID作为默认ID
           $stateParams.id=pageData.cateid=pageData.menu[0].navigation_link.substring(pageData.menu[0].navigation_link.lastIndexOf("/")+1);
@@ -44,7 +45,9 @@ function listCtrl($state,$stateParams, $scope, commService,$timeout) {
     commService.get(
       commService.baseData.listUrl,
       {
-        category_id: cateid
+        category_id: cateid,
+        pageindex:1,
+        pagesize:100
       }, function (data) {
         if (data.isSuccess == true) { //如果服务器返回成功，将返回的数组赋值给页面信息对象
           pageData.info = data.returnObj;

@@ -1,9 +1,17 @@
-.dz-enter-view{
+.dz-enter-view {
   //background-color: #f7f7f7;
   min-height: 100%;
   height: auto !important;
 }
-.dz-enter-content{
+
+.dz-enter-content {
   width: 100%;
-  padding: 1rem;
+}
+
+.dz-enter-text img {
+  width: 100%;
+}
+
+.dz-enter-text p:not(:first-child) {
+  padding: 0 1rem;
 }
