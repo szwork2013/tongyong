@@ -2,19 +2,22 @@ angular
   .module('zhiyun').factory("commService", function ($rootScope,$http) {
 
 
-    if(location.hostname.match('localhost')||location.hostname.match('192.168.')){
-      $rootScope.mainsiteurl="http://efchengdu.gotocloud8.net";
-      //$rootScope.mainsiteurl="http://dev2.comeoncloud.net/";
-    }else{
-      $rootScope.mainsiteurl=location.origin;
-    }
+    //if(location.hostname.match('localhost')||location.hostname.match('192.168.')){
+    //  $rootScope.mainsiteurl="http://efchengdu.gotocloud8.net";
+    //  //$rootScope.mainsiteurl="http://dev2.comeoncloud.net/";
+    //}else{
+    //  $rootScope.mainsiteurl=location.origin;
+    //}
 
 
     var commService = {
       baseData: {
-        listUrl:$rootScope.mainsiteurl+"/serv/api/article/list.ashx",
-        listMenuUrl:$rootScope.mainsiteurl+"/serv/api/mall/navigation.ashx",
-        detailUrl:$rootScope.mainsiteurl+"/serv/api/article/get.ashx"
+        //listUrl:$rootScope.mainsiteurl+"/serv/api/article/list.ashx",
+        //listMenuUrl:$rootScope.mainsiteurl+"/serv/api/mall/navigation.ashx",
+        //detailUrl:$rootScope.mainsiteurl+"/serv/api/article/get.ashx"
+        listUrl:"/serv/api/article/list.ashx",  //文字列表接口
+        listMenuUrl:"/serv/api/mall/navigation.ashx", //导航菜单接口
+        detailUrl:"/serv/api/article/get.ashx"  //文章页接口
       }
     };
 
