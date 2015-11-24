@@ -9,7 +9,7 @@ function listCtrl($state,$stateParams, $scope, commService,$timeout) {
     cateid:"",  //记录分类ID
     info: {}, //页面展示信息对象
     type:"",  //自定义导航类型存储
-    dz_img: ['http://dev2.comeoncloud.net/customize/ef/assets/images/dizhou/banner.jpg', 'http://dev2.comeoncloud.net/customize/ef/assets/images/dizhou/banner2.jpg', 'http://dev2.comeoncloud.net/customize/ef/assets/images/dizhou/banner3.jpg']
+    dz_img: ['http://dizhou.gotocloud8.net/customize/ef/assets/images/dizhou/banner.jpg', 'http://dizhou.gotocloud8.net/customize/ef/assets/images/dizhou/banner2.jpg', 'http://dizhou.gotocloud8.net/customize/ef/assets/images/dizhou/banner3.jpg']
     //迪洲焦点图数组
   };
   var pageFunc = $scope.pageFunc = {};

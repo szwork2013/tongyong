@@ -8,9 +8,9 @@
        ng-href="{{pageData.menu[$index].navigation_link}}"
        ng-class="{'yf-list-tabs-active':pageData.cateid == pageData.menu[$index].isShow}"></a>
   </div>
-  <div class="dz-product-container" ng-repeat="List in pageData.info.list"
-       ng-click="pageFunc.go('dz-detail',{id:pageData.info.list[$index].article_id})">
-    <div class="dz-product-content" ng-click="pageFunc.go('dz-detail')">
+  <div class="dz-product-container">
+    <div class="dz-product-content" ng-repeat="List in pageData.info.list"
+         ng-click="pageFunc.go('dz-detail',{id:pageData.info.list[$index].article_id})">
       <img ng-src="{{pageData.info.list[$index].article_img_url}}" class="dz-product-pic">
       <p class="dz-product-title" ng-bind="pageData.info.list[$index].article_name"></p>
     </div>

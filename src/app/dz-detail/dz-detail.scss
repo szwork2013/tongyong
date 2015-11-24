@@ -1,25 +1,21 @@
-.dz-detail-view{
+.dz-detail-view {
   background-color: #f7f7f7;
   min-height: 100%;
   height: auto !important;
 }
 
-.dz-detail-content{
+.dz-detail-content {
   padding: 1rem 0.5rem;
 }
-.dz-detail-show{
-  margin-bottom: 2rem;
+
+.dz-detail-content img {
+  width: 100%;
 }
-.dz-detail-show-title{
-  color:#595959;
-  padding: 0.3rem 0.5rem;
-  border-left: 6px solid #f46e31;
+
+.dz-detail-content table{
+  width: 100%;
 }
-.dz-detail-show-desc{
-  padding-left: 1.5rem;
-}
-.dz-detail-org{
-  color:#f47032;
-  font-size: 0.5rem;
-  margin-right: 1rem;
+
+.dz-detail-content td{
+  width: auto !important;
 }

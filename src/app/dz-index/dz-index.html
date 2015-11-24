@@ -5,7 +5,8 @@
         <img ng-src="{{img}}" class="full-width">
       </li>
     </ul>
-    <div rn-carousel-indicators ng-if="pageData.dz_img.length > 1" slides="pageData.dz_img" rn-carousel-index="carouselIndex"
+    <div rn-carousel-indicators ng-if="pageData.dz_img.length > 1" slides="pageData.dz_img"
+         rn-carousel-index="carouselIndex"
          class="imgIndex"></div>
   </div>
   <div class="dz-index-content">
@@ -27,15 +28,15 @@
     </div>
   </div>
   <div class="dz-index-content">
-    <div class="dz-index-container">
+    <div class="dz-index-container" ng-click="pageFunc.go('dz-enter',{id:'554525'})">
       <p class="dz-index-text-mask"></p>
 
       <p class="dz-index-text-mask-2"></p>
 
-      <p class="dz-index-text">船厨环境</p>
+      <p class="dz-index-text">资格证书</p>
       <img src="assets/images/dizhou/index-3.jpg" class="dz-index-img">
     </div>
-    <div class="dz-index-container pull-right">
+    <div class="dz-index-container pull-right" ng-click="pageFunc.go('dz-enter',{id:'554874'})">
       <p class="dz-index-text-mask"></p>
 
       <p class="dz-index-text-mask-2"></p>
@@ -45,28 +46,35 @@
     </div>
   </div>
   <div class="dz-index-content">
-    <div class="dz-index-container">
-      <p class="dz-index-text-mask"></p>
-
-      <p class="dz-index-text-mask-2"></p>
-
-      <p class="dz-index-text">卫生监控</p>
-      <img src="assets/images/dizhou/index-5.jpg" class="dz-index-img">
-    </div>
-    <div class="dz-index-container pull-right">
+    <div class="dz-index-container" ng-click="pageFunc.go('dz-enter',{id:'554376'})">
       <p class="dz-index-text-mask"></p>
 
       <p class="dz-index-text-mask-2"></p>
 
       <p class="dz-index-text">联系迪洲</p>
-      <img src="assets/images/dizhou/index-6.jpg" class="dz-index-img">
+      <img src="assets/images/dizhou/index-5.jpg" class="dz-index-img">
     </div>
   </div>
   <p class="text-center dz-index-text-2">上海迪洲船用厨房设备有限公司</p>
 
   <div class="dz-index-foot text-center">
-    <span class="dz-index-menu"><i class="iconfont icon-icon01 dz-index-ico dz-index-active"></i><br>首页</span>
-    <span class="dz-index-menu"><i class="iconfont icon-daohang dz-index-ico"></i><br>一键导航</span>
-    <span class="dz-index-menu"><i class="iconfont icon-lianxi dz-index-ico"></i><br>联系我们</span>
+    <span class="dz-index-menu" ng-click="pageFunc.go('dz-index')"><i
+      class="iconfont icon-icon01 dz-index-ico dz-index-active"></i><br>首页</span>
+    <a class="dz-index-link" href="http://map.sogou.com/u/PXJrW3">
+      <span class="dz-index-menu"><i class="iconfont icon-daohang dz-index-ico"></i><br>一键导航</span>
+    </a>
+    <a href="tel:00862158185785" class="dz-index-link">
+      <span class="dz-index-menu"><i class="iconfont icon-lianxi dz-index-ico"></i><br>联系我们</span>
+    </a>
   </div>
 </div>
+<script>
+  wx.ready(function () {
+    wxapi.wxshare({
+      title: "英孚教育青少儿英语成都学校",
+      desc: "英孚教育青少儿英语成都学校",
+      link: "http://efchengdu.gotocloud8.net/customize/ef/#/yf-index",
+      imgUrl: "http://efchengdu.gotocloud8.net/customize/ef/assets/images/yingfu/share.jpg"
+    })
+  })
+</script>

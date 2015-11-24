@@ -8,10 +8,20 @@
   width: 100%;
 }
 
-.dz-enter-text img {
+.dz-enter-content img {
   width: 100%;
 }
 
-.dz-enter-text p:not(:first-child) {
+.dz-enter-content span{
+  display: block;
   padding: 0 1rem;
+}
+
+.dz-enter-content table{
+  width: 98%;
+  margin: 0 auto;
+}
+
+.dz-enter-content td{
+  width: 50%;
 }

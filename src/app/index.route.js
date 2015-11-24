@@ -53,7 +53,7 @@
         controllerAs: 'detail'
       })
     ;
-    $urlRouterProvider.otherwise('/yf-index');
+    //$urlRouterProvider.otherwise('');
   }
 
 })();
