@@ -29,6 +29,7 @@
   background-color: #f7f7f7;
   min-height: 100%;
   height: auto !important;
+  padding-bottom: 22%;
 }
 
 .dz-index-content {
@@ -94,6 +95,10 @@
   border-top:1px solid #ccc;
   padding: 0.5rem 1rem 0.3rem 1rem;
   box-shadow: 0 2px 3px 3px #ccc;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
 }
 .dz-index-menu{
   display: inline-block;
