@@ -29,6 +29,7 @@ function listCtrl($state,$stateParams, $scope, commService,$timeout) {
         $timeout(function() {
           $(".yf-list-tabs").css("width", pageData.width);  //使用JQ应用宽度
           $(".dz-product-tabs").css("width", pageData.width);
+          $(".dz-list-tabs").css("width", pageData.width);
         });
         if($stateParams.id==""){  //如果进入页面后没有传递分类ID，将菜单数组第一个菜单的分类ID作为默认ID
           $stateParams.id=pageData.cateid=pageData.menu[0].navigation_link.substring(pageData.menu[0].navigation_link.lastIndexOf("/")+1);

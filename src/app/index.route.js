@@ -52,6 +52,12 @@
         controller: 'detailCtrl',
         controllerAs: 'detail'
       })
+      .state('dz-list', {
+        url: '/dz-list/:type/:id',
+        templateUrl: 'app/dz-list/dz-list.html',
+        controller: 'listCtrl',
+        controllerAs: 'list'
+      })
     ;
     //$urlRouterProvider.otherwise('');
   }

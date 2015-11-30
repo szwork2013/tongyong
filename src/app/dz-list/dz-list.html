@@ -1,0 +1,21 @@
+<div class="dz-list-view" data-ng-init="pageFunc.loadPage()">
+  <div class="dz-list-head">
+    <a class="dz-list-tabs" ng-repeat="x in pageData.menu" ng-bind="pageData.menu[$index].navigation_name"
+       ng-href="{{pageData.menu[$index].navigation_link}}"
+       ng-class="{'dz-list-tabs-active':pageData.cateid == pageData.menu[$index].isShow}"></a>
+  </div>
+  <div class="dz-list-container" ng-repeat="List in pageData.info.list"
+       ng-click="pageFunc.go('dz-detail',{id:pageData.info.list[$index].article_id})">
+    <div class="dz-list-pic" ng-show="pageData.type=='dz-none'">
+      <img ng-src="{{pageData.info.list[$index].article_img_url}}" class="dz-list-pic-show">
+    </div>
+    <div class="dz-list-text" ng-class="{'dz-list-text-width':pageData.type=='dz-news'}">
+      <p class="dz-list-title" ng-bind="pageData.info.list[$index].article_name"></p>
+
+      <p class="dz-list-content" ng-bind="pageData.info.list[$index].article_summary"></p>
+
+      <p class="dz-list-time" ng-show="pageData.type=='dz-news'">发布于<span
+        ng-bind="pageData.info.list[$index].article_time | date:'yyyy年MM月dd日'"></span></p>
+    </div>
+  </div>
+</div>
