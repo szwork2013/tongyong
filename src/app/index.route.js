@@ -58,6 +58,82 @@
         controller: 'listCtrl',
         controllerAs: 'list'
       })
+
+
+
+
+
+
+
+
+
+
+
+      /**
+       * 文章列表
+      */
+      //带图片
+      .state('arList01', {
+        url: '/arList01/:catid',
+        templateUrl: 'app/arlist/arlist01/arlist01.html',
+        controller: 'arListCtrl',
+        controllerAs: 'arlist'
+      })
+      //带图片(导航)
+      .state('arList01-nav', {
+        url: '/arList01/:catid/:navtype',
+        templateUrl: 'app/arlist/arlist01/arlist01.html',
+        controller: 'arListCtrl',
+        controllerAs: 'arlist'
+      })
+      //不带图片
+      .state('arList02', {
+        url: '/arList02/:catid',
+        templateUrl: 'app/dz-list/dz-list.html',
+        controller: 'arListCtrl',
+        controllerAs: 'arlist'
+      })
+      .state('arList02-nav', {
+        url: '/arList02/:catid/:navtype',
+        templateUrl: 'app/arlist/arlist01/arlist01.html',
+        controller: 'arListCtrl',
+        controllerAs: 'arlist'
+      })
+
+      /**
+       * 文章详情 
+      */
+      //英孚风格  蓝色
+      .state('arDetail01', {
+        url: '/arDetail01',
+        templateUrl: 'app/arlist/arlist01/arlist01.html',
+        controller: 'arListCtrl',
+        controllerAs: 'arlist'
+      })
+
+
+      /**
+       * 活动列表
+      */
+      //默认风格
+      .state('acList01', {
+        url: '/acList01',
+        templateUrl: 'app/dz-list/dz-list.html',
+        controller: 'acListCtrl',
+        controllerAs: 'list'
+      })
+
+      /**
+       * 活动详情
+      */
+      .state('acDetail01', {
+        url: '/acList01',
+        templateUrl: 'app/dz-list/dz-list.html',
+        controller: 'acListCtrl',
+        controllerAs: 'list'
+      })
+
+
     ;
     //$urlRouterProvider.otherwise('');
   }

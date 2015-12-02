@@ -1,0 +1,27 @@
+<div class="yf-list-view">
+  
+  <!-- 导航列表 -->
+  <div class="yf-list-head" ng-if="arlist.navData">
+    <a 
+    class="yf-list-tabs"
+    ui-sref-active="yf-list-tabs-active"
+    ng-repeat="nav in arlist.navData"
+    ui-sref="arList01-nav({catid:nav.navigation_link,navtype:'top'})">{{nav.navigation_name}}</a>
+  </div>
+  <!-- 文章列表 end-->
+
+  <!-- 文章列表 -->
+  <div class="yf-list-container" ng-repeat="List in arlist.listData">
+    <div class="yf-list-pic">
+      <img ng-src="List.article_img_url}}" class="yf-list-pic-show">
+    </div>
+    <div class="yf-list-text">
+      <p class="yf-list-title" ng-bind="List.article_name"></p>
+      <p class="yf-list-content" ng-bind="List.article_summary"></p>
+      <p class="yf-list-time">发布于
+        <span ng-bind="List.article_time | date:'yyyy年MM月dd日'"></span>
+      </p>
+    </div>
+  </div>
+  <!-- 文章列表 end -->
+</div>

@@ -4,7 +4,7 @@ angular
 
     if(location.hostname.match('localhost')||location.hostname.match('192.168.')){
       $rootScope.mainsiteurl="http://efchengdu.gotocloud8.net";
-      $rootScope.mainsiteurl="http://dizhou.gotocloud8.net/";
+      // $rootScope.mainsiteurl="http://dizhou.gotocloud8.net/";
     }else{
       $rootScope.mainsiteurl=location.origin;
     }
