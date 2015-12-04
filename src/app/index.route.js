@@ -74,28 +74,22 @@
       */
       //带图片
       .state('arList01', {
-        url: '/arList01/:catid',
-        templateUrl: 'app/arlist/arlist01/arlist01.html',
-        controller: 'arListCtrl',
-        controllerAs: 'arlist'
-      })
-      //带图片(导航)
-      .state('arList01-nav', {
-        url: '/arList01/:catid/:navtype',
+        url: '/arList01?catid&{bar:bool}&navtype',
         templateUrl: 'app/arlist/arlist01/arlist01.html',
         controller: 'arListCtrl',
         controllerAs: 'arlist'
       })
       //不带图片
-      .state('arList02', {
-        url: '/arList02/:catid',
-        templateUrl: 'app/dz-list/dz-list.html',
+      .state('arList01-1', {
+        url: '/arList01-1?catid&{bar:bool}&navtype',
+        templateUrl: 'app/arlist/arlist01/arlist01-1.html',
         controller: 'arListCtrl',
         controllerAs: 'arlist'
       })
-      .state('arList02-nav', {
-        url: '/arList02/:catid/:navtype',
-        templateUrl: 'app/arlist/arlist01/arlist01.html',
+      //不带图片
+      .state('arList02', {
+        url: '/arList02?catid&{bar:bool}&navtype',
+        templateUrl: 'app/arlist/arlist02/arlist02.html',
         controller: 'arListCtrl',
         controllerAs: 'arlist'
       })
@@ -135,7 +129,12 @@
 
 
     ;
-    //$urlRouterProvider.otherwise('');
+
+
+    //测试
+    $urlRouterProvider.otherwise('/arList01?catid=507&bar=1&navtype=top');
+
+    
   }
 
 })();
