@@ -5,7 +5,7 @@
     .controller('arListCtrl', arListCtrl)
 
   /** 列表页 */
-  function arListCtrl($location,$scope,wPopup,wxAPI,nAPI,$q,$filter,wLoading,$stateParams,$http) {
+  function arListCtrl($location,$scope,wPopup,wxAPI,nAPI,$q,$filter,wLoading,$stateParams,$http,$timeout) {
 
     console.log($stateParams)
 
@@ -41,6 +41,10 @@
           navigation_name: "模板1-1",
         }];
         // console.log(data)
+        var width=(1/arlist.navData.length)* 100+"%";  //根据返回的菜单数组动态计算宽度
+        $timeout(function() {
+          $(".list-tabs").css("width", width);  //使用JQ应用宽度
+        });
       })
     }else{
       //==============拉取文章分类  做导航==============

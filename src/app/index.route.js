@@ -95,7 +95,7 @@
       })
 
       /**
-       * 文章详情 
+       * 文章详情
       */
       //英孚风格  蓝色
       .state('arDetail01', {
@@ -134,7 +134,7 @@
     //测试
     $urlRouterProvider.otherwise('/arList01?catid=507&bar=1&navtype=top');
 
-    
+
   }
 
 })();
