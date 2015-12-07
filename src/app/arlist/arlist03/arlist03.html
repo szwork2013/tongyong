@@ -1,0 +1,78 @@
+<div class="list-view3">
+
+  <!-- 导航列表 -->
+  <div class="list-head" ng-if="arlist.params.bar">
+    <!--       <a
+        class="list-tabs"
+        ui-sref-active="list-tabs-active"
+        ng-repeat="nav in arlist.navData"
+        ng-href="{{nav.navigation_link}}">{{nav.navigation_name}}</a> -->
+    <a
+      class="list-tabs"
+      ui-sref-active="list-tabs-active"
+      ng-repeat="nav in arlist.navData"
+      ui-sref="{{nav.navigation_link}}">{{nav.navigation_name}}</a>
+  </div>
+  <!-- 导航列表 end-->
+
+  <!-- 分类、搜素 -->
+  <div class="nav-top">
+    <span class="iconfont icon-fenlei" ng-click="pageInfo.maskShow=1;pageFunc.maskShow()"></span>
+    <input class="search" placeholder="搜索..." ng-model="arlist.keyword" ng-change="pageFunc.search()">
+    <span class="iconfont icon-sousuo1" ng-click="pageFunc.search()"></span>
+  </div>
+  <!-- 分类、搜素 end-->
+
+  <!-- 分类导航 -->
+  <div class="mask" ng-if="pageInfo.maskShow" ng-click="pageInfo.maskShow=0;pageFunc.maskHide()">
+    <div class="nav-left">
+      <h3 class="title">分类</h3>
+
+      <div class="list">
+        <span>全部</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+        <span>分类名称</span>
+      </div>
+    </div>
+  </div>
+  <!-- 分类导航 end-->
+
+  <!-- 文章列表 -->
+  <div class="list-container" ng-repeat="List in arlist.listData">
+    <div class="list-pic">
+      <img ng-src="{{List.article_img_url}}" class="list-pic-show">
+    </div>
+    <div class="list-text">
+      <p class="list-title" ng-bind="List.article_name"></p>
+
+      <p class="list-content" ng-bind="List.article_summary"></p>
+
+      <p class="list-time">发布于
+        <span ng-bind="List.article_time | date:'yyyy年MM月dd日'"></span>
+      </p>
+    </div>
+  </div>
+  <!-- 文章列表 end -->
+</div>

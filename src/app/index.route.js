@@ -93,6 +93,13 @@
         controller: 'arListCtrl',
         controllerAs: 'arlist'
       })
+      //带滑动分类
+      .state('arList03', {
+        url: '/arList03?catid&{bar:bool}&navtype',
+        templateUrl: 'app/arlist/arlist03/arlist03.html',
+        controller: 'arListCtrl',
+        controllerAs: 'arlist'
+      })
 
       /**
        * 文章详情
