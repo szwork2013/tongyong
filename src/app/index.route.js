@@ -95,8 +95,14 @@
       })
       //带滑动分类
       .state('arList03', {
-        url: '/arList03?catid&{bar:bool}&navtype',
+        url: '/arList03?catid&keyword',
         templateUrl: 'app/arlist/arlist03/arlist03.html',
+        controller: 'arListCtrl',
+        controllerAs: 'arlist'
+      })
+      .state('arList03-1', {
+        url: '/arList03-1?catid&keyword',
+        templateUrl: 'app/arlist/arlist03/arlist03-1.html',
         controller: 'arListCtrl',
         controllerAs: 'arlist'
       })

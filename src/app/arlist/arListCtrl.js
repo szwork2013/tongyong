@@ -2,18 +2,20 @@
   'use strict';
   angular
     .module('zhiyun')
-    .controller('arListCtrl', arListCtrl)
+    .controller('arListCtrl', arListCtrl);
 
   /** 列表页 */
   function arListCtrl($location, $scope, wPopup, wxAPI, nAPI, $q, $filter, wLoading, $stateParams, $http, $timeout) {
 
-    console.log($stateParams)
+    console.log($stateParams);
 
     var arlist = this;
     arlist.listData = [];//文章列表
     arlist.navData = [];//导航列表
-    arlist.params = $stateParams;
-    arlist.keyword = "";
+    arlist.cateData = []; //分类列表
+    arlist.params = $stateParams; //路由对象
+    arlist.keyword = ''; //分类关键字
+    if (!arlist.params.keyword) arlist.params.keyword = ''; //如果地址栏没有关键字，则为空，防止发送undefined作为关键字
 
     //有导航参数  调导航接口 导航数据做导航
     if (arlist.params.navtype) {
@@ -27,25 +29,31 @@
             navigation_id: 30,
             navigation_img_url: "",
             navigation_link: "arList02({catid:507,navtype:'top',bar:1})",
-            navigation_name: "模板2",
+            navigation_name: "模板2"
           }, {
             children: null,
             navigation_id: 30,
             navigation_img_url: "",
             navigation_link: "arList01({catid:507,navtype:'top',bar:1})",
-            navigation_name: "模板1",
+            navigation_name: "模板1"
           }, {
             children: null,
             navigation_id: 30,
             navigation_img_url: "",
             navigation_link: "arList01-1({catid:507,navtype:'top',bar:1})",
-            navigation_name: "模板1-1",
+            navigation_name: "模板1-1"
           }, {
             children: null,
             navigation_id: 30,
             navigation_img_url: "",
-            navigation_link: "arList03({catid:507,navtype:'top',bar:0})",
-            navigation_name: "模板3",
+            navigation_link: "arList03({catid:507})",
+            navigation_name: "模板3"
+          }, {
+            children: null,
+            navigation_id: 30,
+            navigation_img_url: "",
+            navigation_link: "arList03-1({catid:507})",
+            navigation_name: "模板3-1"
           }];
           // console.log(data)
           var width = (1 / arlist.navData.length) * 100 + "%";  //根据返回的菜单数组动态计算宽度
@@ -55,37 +63,40 @@
         })
     } else {
       //==============拉取文章分类  做导航==============
-
+      nAPI.categoryList({keyword: ''})
+        .then(function (data) {
+          arlist.cateData = data;
+          console.log(arlist.cateData)
+        });
     }
 
 
     //根据参数取文章数据
     var arList = {
-      category_id: arlist.params.catid
-    }
+      category_id: arlist.params.catid,
+      keyword: arlist.params.keyword
+    };
+
     nAPI.articleList(arList)
       .then(function (data) {
         // console.log(data.returnObj.list)
         arlist.listData = data.returnObj.list;
-      })
+      });
 
     //定义页面方法集合
     var pageFunc = $scope.pageFunc = {};
 
-    //分类菜单细节善后处理
-    pageFunc.maskShow = function () {
-      $('body').scrollTop(0).css('overflow', 'hidden');
-    }
-    pageFunc.maskHide = function () {
-      $('body').css('overflow', 'auto');
-    }
-    //善后处理结束
-
     //搜索功能实现
     pageFunc.search = function () {
+      var Url = $location.url(); //获取url的参数部分
+      $location.search('keyword', arlist.keyword); //改变地址栏参数
+    };
 
-
-    }
+    //分类点击后改变分类ID
+    pageFunc.changeCateID = function (data) {
+      $location.search('catid',data); //改变地址栏参数
+      $location.search('keyword', ''); //清空关键字
+    };
 
   }
 })();
