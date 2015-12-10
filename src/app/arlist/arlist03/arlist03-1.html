@@ -1,36 +1,22 @@
 <div class="list-view3">
-
-  <!-- 导航列表 -->
-  <!--<div class="list-head" ng-if="arlist.params.bar">-->
-  <!--&lt;!&ndash;       <a-->
-  <!--class="list-tabs"-->
-  <!--ui-sref-active="list-tabs-active"-->
-  <!--ng-repeat="nav in arlist.navData"-->
-  <!--ng-href="{{nav.navigation_link}}">{{nav.navigation_name}}</a> &ndash;&gt;-->
-  <!--<a-->
-  <!--class="list-tabs"-->
-  <!--ui-sref-active="list-tabs-active"-->
-  <!--ng-repeat="nav in arlist.navData"-->
-  <!--ui-sref="{{nav.navigation_link}}">{{nav.navigation_name}}</a>-->
-  <!--</div>-->
-  <!-- 导航列表 end-->
-
   <!-- 分类、搜素 -->
   <div class="nav-top">
-    <span class="iconfont icon-fenlei" ng-click="pageInfo.maskShow=1;pageFunc.maskShow()"></span>
+    <span class="iconfont icon-fenlei" ng-if="arlist.params.bar" ng-click="pageInfo.maskShow=1;maskShow()"></span>
     <input class="search" placeholder="搜索..." ng-model="arlist.keyword">
-    <span class="iconfont icon-sousuo1" ng-click="pageFunc.search()"></span>
+    <span class="iconfont icon-sousuo1" ng-click="search()"></span>
   </div>
   <!-- 分类、搜素 end-->
 
   <!-- 分类导航 -->
-  <div class="mask" ng-if="pageInfo.maskShow" ng-click="pageInfo.maskShow=0;pageFunc.maskHide()">
+  <div class="mask" ng-if="pageInfo.maskShow" >
     <div class="nav-left">
       <h3 class="title">分类</h3>
-
       <div class="list">
-        <span ng-repeat="cate in arlist.cateData.list"
-              ng-click="pageFunc.maskHide();pageFunc.changeCateID(arlist.cateData.list[$index].category_id)">{{arlist.cateData.list[$index].category_name}}</span>
+        <a 
+        class="catlink" 
+        ng-repeat="cat in arlist.navData" 
+        ui-sref="{{cat.navigation_link}}" 
+        ng-click="pageInfo.maskShow=0">{{cat.navigation_name}}</a>
       </div>
     </div>
   </div>
@@ -38,7 +24,7 @@
 
   <!-- 文章列表 -->
   <div class="list-container" ng-repeat="List in arlist.listData">
-    <div class="list-text list-text-width">
+    <div class="list-text">
       <p class="list-title" ng-bind="List.article_name"></p>
 
       <p class="list-content" ng-bind="List.article_summary"></p>

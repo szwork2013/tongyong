@@ -5,9 +5,9 @@
     .controller('arListCtrl', arListCtrl);
 
   /** 列表页 */
-  function arListCtrl($location, $scope, wPopup, wxAPI, nAPI, $q, $filter, wLoading, $stateParams, $http, $timeout) {
+  function arListCtrl($location, $scope, wPopup, wxAPI, nAPI, $q, $filter, wLoading,$state, $stateParams, $http, $timeout) {
 
-    console.log($stateParams);
+    console.log($state);
 
     var arlist = this;
     arlist.listData = [];//文章列表
@@ -17,12 +17,15 @@
     arlist.keyword = ''; //分类关键字
     if (!arlist.params.keyword) arlist.params.keyword = ''; //如果地址栏没有关键字，则为空，防止发送undefined作为关键字
 
+    // console.log($stateParams)
+
+// console.log(arlist.params.bar)
+
     //有导航参数  调导航接口 导航数据做导航
     if (arlist.params.navtype) {
       nAPI.navigation({navigation_link_type: arlist.params.navtype})
         .then(function (data) {
           // arlist.navData = data;
-
           //=============模拟导航数据(可删除)============
           arlist.navData = [{
             children: null,
@@ -63,10 +66,16 @@
         })
     } else {
       //==============拉取文章分类  做导航==============
-      nAPI.categoryList({keyword: ''})
+      nAPI.categoryList()
         .then(function (data) {
-          arlist.cateData = data;
-          console.log(arlist.cateData)
+          angular.forEach(data.list, function(value, key) {
+            data.list[key].navigation_name=data.list[key].category_name;
+            // console.log($state.current.name+'({catid:'+''+'})')
+            data.list[key].navigation_link=$state.current.name+'({catid:'+data.list[key].category_id+'})';
+          });
+          console.log([1,data.list[1].navigation_link])
+          arlist.navData = data.list;
+          console.log(arlist.navData)
         });
     }
 
@@ -83,17 +92,15 @@
         arlist.listData = data.returnObj.list;
       });
 
-    //定义页面方法集合
-    var pageFunc = $scope.pageFunc = {};
 
     //搜索功能实现
-    pageFunc.search = function () {
+    $scope.search = function () {
       var Url = $location.url(); //获取url的参数部分
       $location.search('keyword', arlist.keyword); //改变地址栏参数
     };
 
     //分类点击后改变分类ID
-    pageFunc.changeCateID = function (data) {
+    $scope.changeCateID = function (data) {
       $location.search('catid',data); //改变地址栏参数
       $location.search('keyword', ''); //清空关键字
     };

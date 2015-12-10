@@ -74,34 +74,34 @@
       */
       //带图片
       .state('arList01', {
-        url: '/arList01?catid&{bar:bool}&navtype',
+        url: '/arList01?catid&{bar:bool}&navtype&keyword',
         templateUrl: 'app/arlist/arlist01/arlist01.html',
         controller: 'arListCtrl',
         controllerAs: 'arlist'
       })
       //不带图片
       .state('arList01-1', {
-        url: '/arList01-1?catid&{bar:bool}&navtype',
+        url: '/arList01-1?catid&{bar:bool}&navtype&keyword',
         templateUrl: 'app/arlist/arlist01/arlist01-1.html',
         controller: 'arListCtrl',
         controllerAs: 'arlist'
       })
       //不带图片
       .state('arList02', {
-        url: '/arList02?catid&{bar:bool}&navtype',
+        url: '/arList02?catid&{bar:bool}&navtype&keyword',
         templateUrl: 'app/arlist/arlist02/arlist02.html',
         controller: 'arListCtrl',
         controllerAs: 'arlist'
       })
       //带滑动分类
       .state('arList03', {
-        url: '/arList03?catid&keyword',
+        url: '/arList03?catid&{bar:bool}&navtype&keyword',
         templateUrl: 'app/arlist/arlist03/arlist03.html',
         controller: 'arListCtrl',
         controllerAs: 'arlist'
       })
       .state('arList03-1', {
-        url: '/arList03-1?catid&keyword',
+        url: '/arList03-1?catid&{bar:bool}&navtype&keyword',
         templateUrl: 'app/arlist/arlist03/arlist03-1.html',
         controller: 'arListCtrl',
         controllerAs: 'arlist'
